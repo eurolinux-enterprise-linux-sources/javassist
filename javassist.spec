@@ -1,6 +1,6 @@
 Name:           javassist
 Version:        3.16.1
-Release:        10%{?dist}
+Release:        8%{?dist}
 Summary:        The Java Programming Assistant provides simple Java bytecode manipulation
 Group:          Development/Libraries
 License:        MPLv1.1 or LGPLv2+ or ASL 2.0
@@ -48,9 +48,6 @@ javassist development documentation.
 mkdir runtest
 find . -name \*.jar -type f -delete
 
-%pom_remove_dep com.sun:tools
-%pom_add_dep com.sun:tools
-
 %mvn_file : %{name}
 %mvn_alias : "%{name}:%{name}"
 
@@ -68,12 +65,6 @@ find . -name \*.jar -type f -delete
 %doc License.html
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.16.1-10
-- Mass rebuild 2013-12-27
-
-* Wed Nov 13 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 3.16.1-9
-- Remove system-scoped dependency on tools.jar
-
 * Fri Aug 23 2013 Michal Srb <msrb@redhat.com> - 3.16.1-8
 - Migrate away from mvn-rpmbuild (Resolves: #997484)
 
